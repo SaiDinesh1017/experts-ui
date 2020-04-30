@@ -1,10 +1,28 @@
-# Client
+# Domain Experts UI
+Description:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+This app displays the experts name and their expertise. It also allows us to add the new candidate name and his/her expertise
 
+Angular Version: 8.0.3.
+
+## Pre-Requisites
+
+* You must have angular CLI > 8 
+  
+   `npm i -g @angular/cli@8.0.3`
+
+* In order to run this app the backend should be available in your local
+
+    
+     git clone https://github.com/SaiDinesh1017/expertise.git
+     cd expertise
+     ./gradlew bootRun
+    
+     Note : Run the gradle appropriately according to your OS env. For windows use `gradle.bat bootRun`
+   
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm install` and `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -12,16 +30,4 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
