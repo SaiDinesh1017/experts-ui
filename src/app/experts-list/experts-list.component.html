@@ -2,6 +2,49 @@
 
 <h2>Experts List</h2>
 
-<div *ngFor="let expert of experts">
-  {{expert.name}}
+<form [formGroup]="expertform" (ngSubmit)="onSubmit(expertform.value)">
+  <h3>Add new person with his expertise</h3>
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td>
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+  </td>
+    <td>
+      <mat-form-field>
+        <mat-label>Expertise</mat-label>
+        <mat-select formControlName="expert" multiple>
+          <mat-option *ngFor="let topping of listExpertise" [value]="topping">{{topping}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  </td>
+  <td>
+    <button mat-raised-button color="primary" type="submit">Add</button>
+  </td>
+  </tr>
+</table>
+
+</form>
+
+
+
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    <!-- Expert Column -->
+    <ng-container matColumnDef="expert">
+      <th mat-header-cell *matHeaderCellDef> Expert</th>
+      <td mat-cell *matCellDef="let element"> {{element.expert}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
